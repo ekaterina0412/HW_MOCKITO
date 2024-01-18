@@ -18,7 +18,7 @@ public class FilmsManager {
     }
 
     public String[] findLast() {
-        if (films.length < count){
+        if (films.length < count) {
             count = films.length;
         }
 
@@ -32,7 +32,7 @@ public class FilmsManager {
     }
 
     public String[] findLast(int count) {
-        if (films.length < count){
+        if (films.length < count) {
             count = films.length;
         }
 
