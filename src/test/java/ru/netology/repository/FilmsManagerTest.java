@@ -35,14 +35,15 @@ public class FilmsManagerTest {
 
     @Test
     public void returnLast3Films2() {
-        FilmsManager films = new FilmsManager();
+        FilmsManager films = new FilmsManager(3);
 
         films.add("Фильм 1");
         films.add("Фильм 2");
         films.add("Фильм 3");
+        films.add("Фильм 4");
 
-        String[] expected = {"Фильм 3", "Фильм 2", "Фильм 1"};
-        String[] actual = films.findLast(3);
+        String[] expected = {"Фильм 4", "Фильм 3", "Фильм 2"};
+        String[] actual = films.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
     }

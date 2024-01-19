@@ -3,6 +3,16 @@ package ru.netology.repository;
 public class FilmsManager {
     private String[] films = new String[0];
 
+    private int limit;
+
+    public FilmsManager() {
+        limit = 5;
+    }
+
+    public FilmsManager(int limit) {
+        this.limit = limit;
+    }
+
     public void add(String film) {
         String[] tmp = new String[films.length + 1];
         for (int i = 0; i < films.length; i++) {
@@ -17,32 +27,19 @@ public class FilmsManager {
     }
 
     public String[] findLast() {
-        int count = 5;
-        if (films.length < count) {
-            count = films.length;
+        int resultLength;
+
+        if (films.length < limit) {
+            resultLength = films.length;
+        } else {
+            resultLength = limit;
         }
 
-        String[] tmp = new String[count];
-
-        for (int i = 0; i < count; i++) {
-            tmp[i] = films[films.length - 1 - i];
+        String[] result = new String[resultLength];
+        for (int i = 0; i < resultLength; i++) {
+            result[i] = films[films.length - 1 - i];
         }
 
-        return tmp;
+        return result;
     }
-
-    public String[] findLast(int count) {
-        if (films.length < count) {
-            count = films.length;
-        }
-
-        String[] tmp = new String[count];
-
-        for (int i = 0; i < count; i++) {
-            tmp[i] = films[films.length - 1 - i];
-        }
-
-        return tmp;
-    }
-
 }
