@@ -2,7 +2,6 @@ package ru.netology.repository;
 
 public class FilmsManager {
     private String[] films = new String[0];
-    private int count = 5;
 
     public void add(String film) {
         String[] tmp = new String[films.length + 1];
@@ -18,6 +17,7 @@ public class FilmsManager {
     }
 
     public String[] findLast() {
+        int count = 5;
         if (films.length < count) {
             count = films.length;
         }
